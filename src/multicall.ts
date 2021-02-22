@@ -257,7 +257,7 @@ export class Multicall {
   ): Promise<AggregateResponse> {
     const web3 = this.getTypedOptions<MulticallOptionsWeb3>().web3Instance;
     const networkId = await web3.eth.net.getId();
-    const contract = web3.eth.Contract(
+    const contract = new web3.eth.Contract(
       this.ABI,
       this.getContractBasedOnNetwork(networkId)
     );
