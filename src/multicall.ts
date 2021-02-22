@@ -318,7 +318,7 @@ export class Multicall {
     calls: AggregateCallContext[]
   ): AggregateResponse {
     const aggregateResponse: AggregateResponse = {
-      blockNumber: contractResponse.blockNumber.toNumber(),
+      blockNumber: Number(contractResponse.blockNumber),
       results: [],
     };
 
